@@ -38,6 +38,7 @@ public class Main extends JFrame {
 	 * Create the frame.
 	 */
 	public Main() {
+		setResizable(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
@@ -45,7 +46,7 @@ public class Main extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 
-		JButton btnNewButton = new JButton("Siguiente");
+		JButton btnNewButton = new JButton("ACEPTAR");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 
@@ -56,14 +57,18 @@ public class Main extends JFrame {
 			}
 
 		});
-		btnNewButton.setBounds(162, 137, 89, 23);
+		btnNewButton.setBounds(166, 164, 91, 23);
 		contentPane.add(btnNewButton);
 
-		JLabel lblNewLabel = new JLabel("Biernvenido");
-		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		JLabel lblNewLabel = new JLabel("BIENVENIDO");
+		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 16));
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel.setBounds(77, 78, 269, 30);
+		lblNewLabel.setBounds(73, 98, 269, 30);
 		contentPane.add(lblNewLabel);
+		
+		JLabel lblNewLabel_1 = new JLabel("Pulsa en el bot\u00F3n de aceptar, para continuar.");
+		lblNewLabel_1.setBounds(89, 139, 253, 14);
+		contentPane.add(lblNewLabel_1);
 
 	}
 }

@@ -93,16 +93,12 @@ public class Pedido extends JFrame {
 		lblNewLabel.setBounds(10, 0, 488, 29);
 		contentPane.add(lblNewLabel);
 		
-		JButton btnLocal = new JButton("Local");
-		btnLocal.setBounds(32, 395, 89, 23);
-		contentPane.add(btnLocal);
-		
-		JButton btnDomicilio = new JButton("Domicilio");		
-		btnDomicilio.setBounds(146, 395, 89, 23);
+		JButton btnDomicilio = new JButton("si");		
+		btnDomicilio.setBounds(39, 319, 57, 23);
 		contentPane.add(btnDomicilio);
 		
-		JLabel lblNewLabel_1 = new JLabel("\u00BFPedido con recogida en local o a domicilio?");
-		lblNewLabel_1.setBounds(27, 370, 208, 14);
+		JLabel lblNewLabel_1 = new JLabel("\u00BFPedido a domicilio?");
+		lblNewLabel_1.setBounds(29, 301, 208, 14);
 		contentPane.add(lblNewLabel_1);
 		
 		JList listProductos = new JList();
@@ -117,6 +113,10 @@ public class Pedido extends JFrame {
 		});
 		listProductos.setBounds(32, 112, 171, 156);
 		contentPane.add(listProductos);
+		
+		JButton btnNewButton = new JButton("Volver");
+		btnNewButton.setBounds(366, 381, 89, 23);
+		contentPane.add(btnNewButton);
 		
 		
 		

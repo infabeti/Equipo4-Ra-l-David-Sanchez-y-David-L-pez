@@ -65,11 +65,11 @@ public class FacturaCafeteria extends JFrame {
 		contentPane.setLayout(null);
 
 		JLabel lblNIF = new JLabel("NIF");
-		lblNIF.setBounds(31, 416, 46, 14);
+		lblNIF.setBounds(20, 292, 46, 14);
 		contentPane.add(lblNIF);
 
 		JLabel lblEmpleado = new JLabel("N\u00BA Empleado");
-		lblEmpleado.setBounds(316, 416, 89, 14);
+		lblEmpleado.setBounds(20, 320, 89, 14);
 		contentPane.add(lblEmpleado);
 
 		JLabel Cantidad = new JLabel("Cantidad");
@@ -77,12 +77,12 @@ public class FacturaCafeteria extends JFrame {
 		contentPane.add(Cantidad);
 
 		textNIF = new JTextField();
-		textNIF.setBounds(66, 413, 120, 20);
+		textNIF.setBounds(50, 289, 120, 20);
 		contentPane.add(textNIF);
 		textNIF.setColumns(10);
 
 		textEmpleado = new JTextField();
-		textEmpleado.setBounds(387, 413, 86, 20);
+		textEmpleado.setBounds(95, 317, 86, 20);
 		contentPane.add(textEmpleado);
 		textEmpleado.setColumns(10);
 
@@ -93,15 +93,15 @@ public class FacturaCafeteria extends JFrame {
 		textCantidad.setColumns(10);
 
 		JButton btnFacturaSi = new JButton("Si");		
-		btnFacturaSi.setBounds(31, 379, 89, 23);
+		btnFacturaSi.setBounds(20, 379, 89, 23);
 		contentPane.add(btnFacturaSi);
 
 		JButton btnFacturaNo = new JButton("No");
-		btnFacturaNo.setBounds(129, 379, 89, 23);
+		btnFacturaNo.setBounds(137, 379, 89, 23);
 		contentPane.add(btnFacturaNo);
 
 		JLabel lblNewLabel = new JLabel("\u00BFQuieres crear una factura?");
-		lblNewLabel.setBounds(10, 354, 197, 14);
+		lblNewLabel.setBounds(20, 354, 197, 14);
 		contentPane.add(lblNewLabel);
 
 		JScrollPane pnlFactura = new JScrollPane();
@@ -120,14 +120,14 @@ public class FacturaCafeteria extends JFrame {
 		pnlFactura.setViewportView(table_1);
 
 		JButton btnAnadir = new JButton("A\u00F1adir");
-		btnAnadir.setBounds(339, 313, 89, 23);
+		btnAnadir.setBounds(335, 331, 89, 23);
 		btnAnadir.setEnabled(false);
 		getContentPane().add(btnAnadir);
 
 		JLabel lblNewLabel_1 = new JLabel("Factura");
-		lblNewLabel_1.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		lblNewLabel_1.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		lblNewLabel_1.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_1.setBounds(10, 0, 617, 33);
+		lblNewLabel_1.setBounds(-34, 11, 617, 33);
 		contentPane.add(lblNewLabel_1);
 
 		JList listProductos = new JList();
@@ -141,12 +141,20 @@ public class FacturaCafeteria extends JFrame {
 			}
 		});
 
-		listProductos.setBounds(31, 117, 187, 160);
+		listProductos.setBounds(31, 160, 187, 111);
 		contentPane.add(listProductos);
 		
 		JButton btnEliminar = new JButton("Eliminar");		
-		btnEliminar.setBounds(467, 313, 89, 23);
+		btnEliminar.setBounds(469, 331, 89, 23);
 		contentPane.add(btnEliminar);
+		
+		JLabel lblNewLabel_2 = new JLabel("Listado de Productos:");
+		lblNewLabel_2.setBounds(31, 140, 156, 14);
+		contentPane.add(lblNewLabel_2);
+		
+		JButton btnNewButton = new JButton("Volver");
+		btnNewButton.setBounds(469, 403, 89, 23);
+		contentPane.add(btnNewButton);
 
 		// Eventos
 

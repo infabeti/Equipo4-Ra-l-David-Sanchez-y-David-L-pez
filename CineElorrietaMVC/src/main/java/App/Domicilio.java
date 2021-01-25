@@ -86,12 +86,12 @@ public class Domicilio extends JFrame {
 		contentPane.add(textDireccion);
 		
 		JLabel lblNewLabel_4 = new JLabel("N\u00BA Empleado");
-		lblNewLabel_4.setBounds(10, 149, 68, 14);
+		lblNewLabel_4.setBounds(10, 149, 104, 14);
 		contentPane.add(lblNewLabel_4);
 		
 		textEmpleado = new JTextField();
 		textEmpleado.setColumns(10);
-		textEmpleado.setBounds(77, 146, 86, 20);
+		textEmpleado.setBounds(87, 146, 86, 20);
 		contentPane.add(textEmpleado);
 		
 		JButton btnAceptar = new JButton("Aceptar");		

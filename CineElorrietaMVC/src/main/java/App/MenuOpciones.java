@@ -51,23 +51,23 @@ public class MenuOpciones extends JFrame {
 		contentPane.add(lblNewLabel);
 
 		JButton btnFactura = new JButton("Ticket");
-		btnFactura.setBounds(50, 72, 89, 23);
+		btnFactura.setBounds(27, 72, 112, 23);
 		contentPane.add(btnFactura);
 
 		JButton btnAprovisionamiento = new JButton("Aprovisionamiento");
-		btnAprovisionamiento .setBounds(25, 165, 137, 23);
+		btnAprovisionamiento .setBounds(27, 205, 172, 23);
 		contentPane.add(btnAprovisionamiento );
 
 		JButton btnPedido = new JButton("Pedido");
-		btnPedido.setBounds(276, 72, 89, 23);
+		btnPedido.setBounds(27, 115, 120, 23);
 		contentPane.add(btnPedido);
 
 		JButton btnComandas = new JButton("Comandas");
-		btnComandas.setBounds(276, 165, 89, 23);
+		btnComandas.setBounds(27, 160, 120, 23);
 		contentPane.add(btnComandas);
 
-		JButton btnCerrarPrograma = new JButton("Cerrar Programa");
-		btnCerrarPrograma.setBounds(160, 227, 113, 23);
+		JButton btnCerrarPrograma = new JButton("Desconectar");
+		btnCerrarPrograma.setBounds(281, 205, 143, 23);
 		contentPane.add(btnCerrarPrograma);
 
 
