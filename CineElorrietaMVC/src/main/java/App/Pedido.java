@@ -261,11 +261,22 @@ public class Pedido extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				
 				
+				ResumenDomicilio ResumDomicilio = new ResumenDomicilio(); // Abre la ventana de LoginContraseña
+				ResumDomicilio.setVisible(true); // Hace visible la ventana de LoginContraseña
+				dispose();
 				
 				
 				
 				
 			}
 		});	
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				MenuOpciones Opcion = new MenuOpciones(); // Abre la ventana de Menu
+				Opcion.setVisible(true); // Hace visible la ventana de Menu
+				dispose(); // Destruye esta ventana
+			}
+		});
 	}
 }

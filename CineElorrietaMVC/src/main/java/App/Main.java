@@ -69,8 +69,8 @@ public class Main extends JFrame {
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 
-				MenuOpciones Opcion = new MenuOpciones(); // Abre la ventana de LoginContraseña
-				Opcion.setVisible(true); // Hace visible la ventana de LoginContraseña
+				MenuOpciones Opcion = new MenuOpciones(); // Abre la ventana de Menu
+				Opcion.setVisible(true); // Hace visible la ventana de Menu
 				dispose(); // Destruye esta ventana
 
 			}

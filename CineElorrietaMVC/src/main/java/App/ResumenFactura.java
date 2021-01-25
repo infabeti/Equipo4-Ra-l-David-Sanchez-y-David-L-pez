@@ -91,14 +91,12 @@ public class ResumenFactura extends JFrame {
 
 				FacturaCafeteria Factura = new FacturaCafeteria(); // Abre la ventana de Factura
 				Factura.setVisible(true); // Hace visible la ventana de Factura
-				dispose(); // Destruye esta ventana	
-				
-				
+				dispose(); // Destruye esta ventana
+
 			}
 		});
 	}
-	
-	
+
 	public void ActualizarFactura(TableModel tableModel) {
 		
 		table_1.setModel(tableModel);
@@ -106,17 +104,21 @@ public class ResumenFactura extends JFrame {
 		tableModel.getValueAt(ALLBITS, ABORT);
 		
 		DefaultTableModel modeloTabla = (DefaultTableModel) tableModel;
-		
-		for (int i=0;i<tableModel.getColumnCount();i++){
+		String Producto="";
+		Double PrecioTotal= 0.00;
+		int Cantidad=0;
+		for (int i=0;i<tableModel.getRowCount();i++){
 			
-			Object arrays []= {};
+			Object arrays[]= {tableModel};
+			Double PrecioUnitario=PrecioTotal/Cantidad;
+			
 			for(int j=0;j<tableModel.getColumnCount();j++) {
-				
+				Object arrays2[]= {tableModel};
 			}
 		}
-		
+	
 		
 		
 	};
-	
+
 }
