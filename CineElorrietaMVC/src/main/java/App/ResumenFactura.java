@@ -1,4 +1,5 @@
 package App;
+
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
 
@@ -8,18 +9,20 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableModel;
 import javax.swing.JTextField;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.SwingConstants;
 import java.awt.Font;
 import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class ResumenFactura extends JFrame {
 
 	private JPanel contentPane;
 	private JTable table_1;
-	private JTextField textNIF;
-	private JTextField textEmpleado;
 	private JLabel lblNewLabel;
 	private JLabel lblNewLabel_1;
 
@@ -49,57 +52,71 @@ public class ResumenFactura extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
-		
+
 		JScrollPane scrollPane = new JScrollPane();
 		scrollPane.setBounds(103, 94, 315, 238);
 		contentPane.add(scrollPane);
-		
+
 		table_1 = new JTable();
-		table_1.setModel(new DefaultTableModel(
-			new Object[][] {
-			},
-			new String[] {
-				"Producto", "Precio Unidad", "Precio", "Cantidad"
-			}
-		));
+		table_1.setModel(new DefaultTableModel(new Object[][] {},
+				new String[] { "Producto", "Precio Unidad", "Precio", "Cantidad" }));
 		scrollPane.setViewportView(table_1);
-		
-		textNIF = new JTextField();
-		textNIF.setColumns(10);
-		textNIF.setBounds(68, 35, 120, 20);
-		textNIF.setEnabled(true);
-		contentPane.add(textNIF);
-		
-		JLabel lblNIF = new JLabel("NIF");
-		lblNIF.setBounds(42, 38, 46, 14);
-		contentPane.add(lblNIF);
-		
-		JLabel lblEmpleado = new JLabel("N\u00BA Empleado");
-		lblEmpleado.setBounds(285, 38, 89, 14);
-		contentPane.add(lblEmpleado);
-		
-		textEmpleado = new JTextField();
-		textEmpleado.setColumns(10);
-		textEmpleado.setBounds(361, 35, 86, 20);
-		textEmpleado.setEnabled(false);
-		contentPane.add(textEmpleado);
-		
+
 		lblNewLabel = new JLabel("Confirmacion Factura");
 		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel.setBounds(10, 0, 509, 24);
 		contentPane.add(lblNewLabel);
-		
+
 		lblNewLabel_1 = new JLabel("\u00BFImprimir y guardar factura?");
 		lblNewLabel_1.setBounds(10, 353, 178, 14);
 		contentPane.add(lblNewLabel_1);
-		
-		JButton btnNewButton = new JButton("Si");
-		btnNewButton.setBounds(42, 390, 89, 23);
-		contentPane.add(btnNewButton);
-		
-		JButton btnNewButton_1 = new JButton("No");
-		btnNewButton_1.setBounds(180, 390, 89, 23);
-		contentPane.add(btnNewButton_1);
+
+		JButton btnResumFactuSI = new JButton("Si");
+		btnResumFactuSI.setBounds(42, 390, 89, 23);
+		contentPane.add(btnResumFactuSI);
+
+		JButton btnResumFactuNO = new JButton("No");
+		btnResumFactuNO.setBounds(180, 390, 89, 23);
+		contentPane.add(btnResumFactuNO);
+
+		btnResumFactuSI.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				JOptionPane.showMessageDialog(contentPane, "Se ha imprimido y registrado la factura");
+			}
+		});
+
+		btnResumFactuNO.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+
+				FacturaCafeteria Factura = new FacturaCafeteria(); // Abre la ventana de Factura
+				Factura.setVisible(true); // Hace visible la ventana de Factura
+				dispose(); // Destruye esta ventana	
+				
+				
+			}
+		});
 	}
+	
+	
+	public void ActualizarFactura(TableModel tableModel) {
+		
+		table_1.setModel(tableModel);
+		
+		tableModel.getValueAt(ALLBITS, ABORT);
+		
+		DefaultTableModel modeloTabla = (DefaultTableModel) tableModel;
+		
+		for (int i=0;i<tableModel.getColumnCount();i++){
+			
+			Object arrays []= {};
+			for(int j=0;j<tableModel.getColumnCount();j++) {
+				
+			}
+		}
+		
+		
+		
+	};
+	
 }

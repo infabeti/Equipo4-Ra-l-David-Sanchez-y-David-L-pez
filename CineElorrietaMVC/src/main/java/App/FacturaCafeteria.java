@@ -174,6 +174,7 @@ public class FacturaCafeteria extends JFrame {
 
 					switch (productoSeleccionado) {
 					case "- Cafe":
+						
 						precioTotal = 1.13 * cantidad;
 						precioTotal = Math.round(precioTotal * 100d) / 100d;
 
@@ -298,8 +299,19 @@ public class FacturaCafeteria extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				
 				ResumenFactura ResumFactura = new ResumenFactura(); // Abre la ventana de LoginContraseña
+				ResumFactura.ActualizarFactura(table_1.getModel());
 				ResumFactura.setVisible(true); // Hace visible la ventana de LoginContraseña
+				;
+				
+				
+				
 				dispose();
+				
+				
+				
+				
+				
+				
 				
 				
 			}
