@@ -1,4 +1,5 @@
 package App;
+
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
 
@@ -55,8 +56,8 @@ public class MenuOpciones extends JFrame {
 		contentPane.add(btnFactura);
 
 		JButton btnAprovisionamiento = new JButton("Aprovisionamiento");
-		btnAprovisionamiento .setBounds(27, 205, 172, 23);
-		contentPane.add(btnAprovisionamiento );
+		btnAprovisionamiento.setBounds(27, 205, 172, 23);
+		contentPane.add(btnAprovisionamiento);
 
 		JButton btnPedido = new JButton("Pedido");
 		btnPedido.setBounds(27, 115, 120, 23);
@@ -70,12 +71,11 @@ public class MenuOpciones extends JFrame {
 		btnCerrarPrograma.setBounds(281, 205, 143, 23);
 		contentPane.add(btnCerrarPrograma);
 
-
 		btnFactura.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 
-				FacturaCafeteria Factura = new FacturaCafeteria(); // Abre la ventana de Ticket
-				Factura.setVisible(true); // Hace visible la ventana de Ticket
+				FacturaCafeteria Factura = new FacturaCafeteria(); // Abre la ventana de Factura
+				Factura.setVisible(true); // Hace visible la ventana de Factura
 				dispose(); // Destruye esta ventana
 
 			}
@@ -83,10 +83,16 @@ public class MenuOpciones extends JFrame {
 		});
 		btnPedido.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Pedido MenuPedido = new Pedido(); // Abre la ventana de Ticket
-				MenuPedido.setVisible(true); // Hace visible la ventana de Ticket
+				Pedido MenuPedido = new Pedido(); // Abre la ventana de Pedido
+				MenuPedido.setVisible(true); // Hace visible la ventana de Pedido
 				dispose(); // Destruye esta ventana
-				
+
+			}
+		});
+		btnCerrarPrograma.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				dispose(); // Destruye esta ventana
+
 			}
 		});
 

@@ -152,9 +152,9 @@ public class FacturaCafeteria extends JFrame {
 		lblNewLabel_2.setBounds(31, 140, 156, 14);
 		contentPane.add(lblNewLabel_2);
 		
-		JButton btnNewButton = new JButton("Volver");
-		btnNewButton.setBounds(469, 403, 89, 23);
-		contentPane.add(btnNewButton);
+		JButton btnVolver = new JButton("Volver");
+		btnVolver.setBounds(469, 403, 89, 23);
+		contentPane.add(btnVolver);
 
 		// Eventos
 
@@ -295,6 +295,16 @@ public class FacturaCafeteria extends JFrame {
 		});
 		
 		btnFacturaSi.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				ResumenFactura ResumFactura = new ResumenFactura(); // Abre la ventana de LoginContraseña
+				ResumFactura.setVisible(true); // Hace visible la ventana de LoginContraseña
+				dispose();
+				
+				
+			}
+		});
+		btnVolver.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
 				ResumenFactura ResumFactura = new ResumenFactura(); // Abre la ventana de LoginContraseña

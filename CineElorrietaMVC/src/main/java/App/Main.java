@@ -46,17 +46,7 @@ public class Main extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 
-		JButton btnNewButton = new JButton("ACEPTAR");
-		btnNewButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-
-				MenuOpciones Opcion = new MenuOpciones(); // Abre la ventana de LoginContraseña
-				Opcion.setVisible(true); // Hace visible la ventana de LoginContraseña
-				dispose(); // Destruye esta ventana
-
-			}
-
-		});
+		JButton btnNewButton = new JButton("ACEPTAR");	
 		btnNewButton.setBounds(166, 164, 91, 23);
 		contentPane.add(btnNewButton);
 
@@ -70,5 +60,21 @@ public class Main extends JFrame {
 		lblNewLabel_1.setBounds(89, 139, 253, 14);
 		contentPane.add(lblNewLabel_1);
 
+		
+		
+		
+		
+		
+		
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+
+				MenuOpciones Opcion = new MenuOpciones(); // Abre la ventana de LoginContraseña
+				Opcion.setVisible(true); // Hace visible la ventana de LoginContraseña
+				dispose(); // Destruye esta ventana
+
+			}
+
+		});
 	}
 }
