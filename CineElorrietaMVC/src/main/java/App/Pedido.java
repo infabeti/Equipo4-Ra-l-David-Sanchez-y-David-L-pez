@@ -21,6 +21,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.JList;
+import javax.swing.JOptionPane;
 import javax.swing.AbstractListModel;
 
 public class Pedido extends JFrame {
@@ -93,11 +94,11 @@ public class Pedido extends JFrame {
 		lblNewLabel.setBounds(10, 0, 488, 29);
 		contentPane.add(lblNewLabel);
 		
-		JButton btnDomicilio = new JButton("si");		
-		btnDomicilio.setBounds(39, 319, 57, 23);
+		JButton btnDomicilio = new JButton("Domicilio");		
+		btnDomicilio.setBounds(39, 328, 86, 23);
 		contentPane.add(btnDomicilio);
 		
-		JLabel lblNewLabel_1 = new JLabel("\u00BFPedido a domicilio?");
+		JLabel lblNewLabel_1 = new JLabel("\u00BFQue tipo de pedido se desea realizar?");
 		lblNewLabel_1.setBounds(29, 301, 208, 14);
 		contentPane.add(lblNewLabel_1);
 		
@@ -114,9 +115,13 @@ public class Pedido extends JFrame {
 		listProductos.setBounds(32, 112, 171, 156);
 		contentPane.add(listProductos);
 		
-		JButton btnNewButton = new JButton("Volver");
-		btnNewButton.setBounds(366, 381, 89, 23);
-		contentPane.add(btnNewButton);
+		JButton btnVolver = new JButton("Volver");
+		btnVolver.setBounds(366, 381, 89, 23);
+		contentPane.add(btnVolver);
+		
+		JButton btnLocal = new JButton("Local");	
+		btnLocal.setBounds(39, 362, 86, 23);
+		contentPane.add(btnLocal);
 		
 		
 		
@@ -270,12 +275,25 @@ public class Pedido extends JFrame {
 				
 			}
 		});	
-		btnNewButton.addActionListener(new ActionListener() {
+		btnVolver.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
 				MenuOpciones Opcion = new MenuOpciones(); // Abre la ventana de Menu
 				Opcion.setVisible(true); // Hace visible la ventana de Menu
 				dispose(); // Destruye esta ventana
+			}
+		});
+		
+		btnLocal.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				ResumenLocal Domicili = new ResumenLocal(); // Abre la ventana de LoginContraseña
+				Domicili.setVisible(true); // Hace visible la ventana de LoginContraseña
+				dispose();
+				
+				
+			
+				
 			}
 		});
 	}

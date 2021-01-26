@@ -18,7 +18,7 @@ import java.awt.event.ActionEvent;
 import javax.swing.SwingConstants;
 import java.awt.Font;
 
-public class ResumenDomicilio extends JFrame {
+public class ResumenLocal extends JFrame {
 
 	private JPanel contentPane;
 	private JTable table;
@@ -26,14 +26,10 @@ public class ResumenDomicilio extends JFrame {
 	private JLabel lblNewLabel;
 	private JTextField textField_1;
 	private JLabel lblNewLabel_1;
-	private JLabel lblNewLabel_2;
-	private JTextField textField_2;
 	private JLabel lblNewLabel_3;
 	private JTextField textField_3;
 	private JButton btnAceptar;
 	private JButton btnCancelar;
-	private JLabel lblPrecioTotal;
-	private JTextField textField_4;
 
 	/**
 	 * Launch the application.
@@ -54,7 +50,7 @@ public class ResumenDomicilio extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public ResumenDomicilio() {
+	public ResumenLocal() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 477, 498);
 		contentPane = new JPanel();
@@ -63,7 +59,7 @@ public class ResumenDomicilio extends JFrame {
 		contentPane.setLayout(null);
 		
 		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(61, 45, 315, 238);
+		scrollPane.setBounds(62, 45, 315, 238);
 		contentPane.add(scrollPane);
 		
 		table = new JTable();
@@ -78,38 +74,31 @@ public class ResumenDomicilio extends JFrame {
 		
 		textField = new JTextField();
 		textField.setColumns(10);
-		textField.setBounds(88, 330, 86, 20);
+		textField.setBounds(88, 294, 86, 20);
 		contentPane.add(textField);
 		
 		lblNewLabel = new JLabel("Nombre");
-		lblNewLabel.setBounds(38, 333, 57, 14);
+		lblNewLabel.setBounds(38, 297, 57, 14);
 		contentPane.add(lblNewLabel);
 		
 		textField_1 = new JTextField();
 		textField_1.setColumns(10);
-		textField_1.setBounds(298, 330, 141, 20);
+		textField_1.setBounds(298, 294, 141, 20);
 		contentPane.add(textField_1);
 		
 		lblNewLabel_1 = new JLabel("Apellidos");
-		lblNewLabel_1.setBounds(240, 333, 89, 14);
+		lblNewLabel_1.setBounds(243, 297, 89, 14);
 		contentPane.add(lblNewLabel_1);
 		
-		lblNewLabel_2 = new JLabel("Direcci\u00F3n");
-		lblNewLabel_2.setBounds(38, 383, 136, 14);
-		contentPane.add(lblNewLabel_2);
 		
-		textField_2 = new JTextField();
-		textField_2.setColumns(10);
-		textField_2.setBounds(98, 380, 167, 20);
-		contentPane.add(textField_2);
 		
 		lblNewLabel_3 = new JLabel("N\u00BA Empleado");
-		lblNewLabel_3.setBounds(35, 358, 113, 14);
+		lblNewLabel_3.setBounds(33, 341, 113, 14);
 		contentPane.add(lblNewLabel_3);
 		
 		textField_3 = new JTextField();
 		textField_3.setColumns(10);
-		textField_3.setBounds(108, 352, 86, 20);
+		textField_3.setBounds(110, 338, 86, 20);
 		contentPane.add(textField_3);
 		
 		btnAceptar = new JButton("Aceptar");		
@@ -120,27 +109,18 @@ public class ResumenDomicilio extends JFrame {
 		btnCancelar.setBounds(328, 425, 89, 23);
 		contentPane.add(btnCancelar);
 		
-		JLabel lblNewLabel_4 = new JLabel("Pedido a Domicilio");
+		JLabel lblNewLabel_4 = new JLabel("Pedido Local");
 		lblNewLabel_4.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		lblNewLabel_4.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_4.setBounds(0, 0, 461, 34);
+		lblNewLabel_4.setBounds(10, 0, 429, 34);
 		contentPane.add(lblNewLabel_4);
-		
-		lblPrecioTotal = new JLabel("Precio total:");
-		lblPrecioTotal.setBounds(220, 297, 75, 14);
-		contentPane.add(lblPrecioTotal);
-		
-		textField_4 = new JTextField();
-		textField_4.setBounds(290, 294, 86, 20);
-		contentPane.add(textField_4);
-		textField_4.setColumns(10);
 		
 		
 		
 		btnAceptar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
-				JOptionPane.showMessageDialog(contentPane, "Se ha registrado el Pedido a Domicilio");
+				JOptionPane.showMessageDialog(contentPane, "Se ha registrado el Pedido como Local");
 			}
 		});
 		btnCancelar.addActionListener(new ActionListener() {

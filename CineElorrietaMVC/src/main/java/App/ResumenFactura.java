@@ -21,6 +21,7 @@ import java.awt.event.ActionEvent;
 
 public class ResumenFactura extends JFrame {
 
+	private static final String ResumenFactura = null;
 	private JPanel contentPane;
 	private JTable table_1;
 	private JLabel lblNewLabel;
@@ -59,7 +60,7 @@ public class ResumenFactura extends JFrame {
 
 		table_1 = new JTable();
 		table_1.setModel(new DefaultTableModel(new Object[][] {},
-				new String[] { "Producto", "Precio Unidad", "Precio", "Cantidad" }));
+				new String[] { "Producto", "Precio", "Cantidad" }));
 		scrollPane.setViewportView(table_1);
 
 		lblNewLabel = new JLabel("Confirmacion Factura");
@@ -82,7 +83,7 @@ public class ResumenFactura extends JFrame {
 
 		btnResumFactuSI.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				JOptionPane.showMessageDialog(contentPane, "Se ha imprimido y registrado la factura");
+				JOptionPane.showMessageDialog(contentPane, "Se ha impreso y registrado la factura");
 			}
 		});
 
@@ -101,21 +102,11 @@ public class ResumenFactura extends JFrame {
 		
 		table_1.setModel(tableModel);
 		
-		tableModel.getValueAt(ALLBITS, ABORT);
 		
-		DefaultTableModel modeloTabla = (DefaultTableModel) tableModel;
-		String Producto="";
-		Double PrecioTotal= 0.00;
-		int Cantidad=0;
-		for (int i=0;i<tableModel.getRowCount();i++){
 			
-			Object arrays[]= {tableModel};
-			Double PrecioUnitario=PrecioTotal/Cantidad;
-			
-			for(int j=0;j<tableModel.getColumnCount();j++) {
-				Object arrays2[]= {tableModel};
-			}
-		}
+		
+		
+		
 	
 		
 		

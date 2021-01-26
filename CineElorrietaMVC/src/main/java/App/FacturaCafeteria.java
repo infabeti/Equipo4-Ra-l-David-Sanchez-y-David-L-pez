@@ -34,6 +34,7 @@ public class FacturaCafeteria extends JFrame {
 	private JTextField textEmpleado;
 	private JTextField textCantidad;
 	private JTable table_1;
+	private JTextField textTotal;
 
 	/**
 	 * Launch the application.
@@ -120,7 +121,7 @@ public class FacturaCafeteria extends JFrame {
 		pnlFactura.setViewportView(table_1);
 
 		JButton btnAnadir = new JButton("A\u00F1adir");
-		btnAnadir.setBounds(335, 331, 89, 23);
+		btnAnadir.setBounds(335, 350, 89, 23);
 		btnAnadir.setEnabled(false);
 		getContentPane().add(btnAnadir);
 
@@ -145,7 +146,7 @@ public class FacturaCafeteria extends JFrame {
 		contentPane.add(listProductos);
 		
 		JButton btnEliminar = new JButton("Eliminar");		
-		btnEliminar.setBounds(469, 331, 89, 23);
+		btnEliminar.setBounds(469, 350, 89, 23);
 		contentPane.add(btnEliminar);
 		
 		JLabel lblNewLabel_2 = new JLabel("Listado de Productos:");
@@ -155,6 +156,11 @@ public class FacturaCafeteria extends JFrame {
 		JButton btnVolver = new JButton("Volver");
 		btnVolver.setBounds(469, 403, 89, 23);
 		contentPane.add(btnVolver);
+		
+		textTotal = new JTextField();
+		textTotal.setBounds(472, 317, 86, 20);
+		contentPane.add(textTotal);
+		textTotal.setColumns(10);
 
 		// Eventos
 
@@ -170,7 +176,7 @@ public class FacturaCafeteria extends JFrame {
 					String productoSeleccionado = (String) listProductos.getSelectedValue();
 					DefaultTableModel modeloTabla = (DefaultTableModel) table_1.getModel();
 					int cantidad = Integer.parseInt(textCantidad.getText());
-					Double precioTotal;
+					Double precioTotal = 0.00;
 
 					switch (productoSeleccionado) {
 					case "- Cafe":
@@ -234,15 +240,13 @@ public class FacturaCafeteria extends JFrame {
 	
 						break;	
 						
-						
-						
-						
-						
 					}
 					
-
+					
 				
 
+		
+				
 				}
 			}
 
@@ -319,8 +323,8 @@ public class FacturaCafeteria extends JFrame {
 		btnVolver.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
-				ResumenFactura ResumFactura = new ResumenFactura(); // Abre la ventana de LoginContraseña
-				ResumFactura.setVisible(true); // Hace visible la ventana de LoginContraseña
+				MenuOpciones Menu = new MenuOpciones(); // Abre la ventana de LoginContraseña
+				Menu.setVisible(true); // Hace visible la ventana de LoginContraseña
 				dispose();
 				
 				
