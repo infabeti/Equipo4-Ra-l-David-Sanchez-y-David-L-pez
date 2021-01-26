@@ -244,8 +244,6 @@ public class FacturaCafeteria extends JFrame {
 					}
 					
 					
-				
-
 		
 				
 				}
@@ -331,6 +329,21 @@ public class FacturaCafeteria extends JFrame {
 				
 			}
 		});
-
+		
+		private void calcularImporteTotal() {
+			
+			int contar=table_1.getRowCount();
+			Double suma=0.00;
+			for(int i=0;i<contar;i++) {
+				String precio=modeloTabla.getValueAt(i,1).toString();
+				 suma = suma+Double.parseDouble(precio.substring(0, precio.length() -1));
+				 
+			}
+		
+			textTotal.setText(suma.toString());
+			
+			
+		}
 	}
+	
 }
