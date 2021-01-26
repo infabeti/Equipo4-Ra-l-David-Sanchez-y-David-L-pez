@@ -1,4 +1,5 @@
 package App;
+
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
 
@@ -56,6 +57,8 @@ public class FacturaCafeteria extends JFrame {
 	/**
 	 * Create the frame.
 	 */
+	
+	
 	public FacturaCafeteria() {
 
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -243,7 +246,7 @@ public class FacturaCafeteria extends JFrame {
 						
 					}
 					
-					
+					calcularImporteTotal();
 		
 				
 				}
@@ -258,10 +261,12 @@ public class FacturaCafeteria extends JFrame {
 					DefaultTableModel modeloTabla = (DefaultTableModel) table_1.getModel();
 					
 						modeloTabla.removeRow(table_1.getRowCount() - 1);
-
+						calcularImporteTotal();
 						
 		
 			}
+
+		
 
 		});
 
@@ -330,20 +335,20 @@ public class FacturaCafeteria extends JFrame {
 			}
 		});
 		
-		private void calcularImporteTotal() {
-			
-			int contar=table_1.getRowCount();
-			Double suma=0.00;
-			for(int i=0;i<contar;i++) {
-				String precio=modeloTabla.getValueAt(i,1).toString();
-				 suma = suma+Double.parseDouble(precio.substring(0, precio.length() -1));
-				 
-			}
-		
-			textTotal.setText(suma.toString());
-			
-			
-		}
+		 
 	}
+	private void calcularImporteTotal() {
+		DefaultTableModel modeloTabla = (DefaultTableModel) table_1.getModel();
+		int contar=table_1.getRowCount();
+		Double suma=0.00;
+		for(int i=0;i<contar;i++) {
+			String precio=modeloTabla.getValueAt(i,1).toString();
+			 suma = suma+Double.parseDouble(precio.substring(0, precio.length() -1));
+			 suma=Math.round(suma * 100d) / 100d;
+		}
 	
+		textTotal.setText(suma.toString()+"€");
+		
+		
+	};
 }

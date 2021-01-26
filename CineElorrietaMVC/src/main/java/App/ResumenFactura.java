@@ -84,6 +84,9 @@ public class ResumenFactura extends JFrame {
 		btnResumFactuSI.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				JOptionPane.showMessageDialog(contentPane, "Se ha impreso y registrado la factura");
+				MenuOpciones Opcion = new MenuOpciones(); // Abre la ventana de Menu
+				Opcion.setVisible(true); // Hace visible la ventana de Menu
+				dispose(); // Destruye esta ventana
 			}
 		});
 

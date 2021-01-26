@@ -143,6 +143,9 @@ public class ResumenDomicilio extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				
 				JOptionPane.showMessageDialog(contentPane, "Se ha registrado el Pedido a Domicilio");
+				MenuOpciones Opcion = new MenuOpciones(); // Abre la ventana de Menu
+				Opcion.setVisible(true); // Hace visible la ventana de Menu
+				dispose(); // Destruye esta ventana
 			}
 		});
 		btnCancelar.addActionListener(new ActionListener() {

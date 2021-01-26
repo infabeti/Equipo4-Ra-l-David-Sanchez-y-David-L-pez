@@ -29,6 +29,7 @@ public class Pedido extends JFrame {
 	private JPanel contentPane;
 	private JTextField textCantidad;
 	private JTable table_1;
+	private JTextField textTotal;
 
 	/**
 	 * Launch the application.
@@ -81,11 +82,11 @@ public class Pedido extends JFrame {
 		contentPane.add(lblerrep);
 		
 		JButton btnAnadir = new JButton("A\u00F1adir");
-		btnAnadir.setBounds(247, 301, 89, 23);
+		btnAnadir.setBounds(247, 342, 89, 23);
 		contentPane.add(btnAnadir);
 		
 		JButton btnEliminar = new JButton("Eliminar");
-		btnEliminar.setBounds(366, 301, 89, 23);
+		btnEliminar.setBounds(366, 342, 89, 23);
 		contentPane.add(btnEliminar);
 		
 		JLabel lblNewLabel = new JLabel("Pedido");
@@ -122,6 +123,11 @@ public class Pedido extends JFrame {
 		JButton btnLocal = new JButton("Local");	
 		btnLocal.setBounds(39, 362, 86, 23);
 		contentPane.add(btnLocal);
+		
+		textTotal = new JTextField();
+		textTotal.setBounds(412, 301, 86, 20);
+		contentPane.add(textTotal);
+		textTotal.setColumns(10);
 		
 		
 		
@@ -206,7 +212,7 @@ public class Pedido extends JFrame {
 						
 					}
 					
-
+					calcularImporteTotal();
 				
 
 				}
@@ -256,7 +262,7 @@ public class Pedido extends JFrame {
 					
 						modeloTabla.removeRow(table_1.getRowCount() - 1);
 
-						
+						calcularImporteTotal();
 		
 			}
 
@@ -299,5 +305,18 @@ public class Pedido extends JFrame {
 				
 			}
 		});
+	}
+	private void calcularImporteTotal() {
+		DefaultTableModel modeloTabla = (DefaultTableModel) table_1.getModel();
+		int contar=table_1.getRowCount();
+		Double suma=0.00;
+		for(int i=0;i<contar;i++) {
+			String precio=modeloTabla.getValueAt(i,1).toString();
+			 suma = suma+Double.parseDouble(precio.substring(0, precio.length() -1));
+			 suma=Math.round(suma * 100d) / 100d;
+		}
+	
+		textTotal.setText(suma.toString()+"€");
+		
 	}
 }
