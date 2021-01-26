@@ -102,14 +102,6 @@ public class ResumenFactura extends JFrame {
 		
 		table_1.setModel(tableModel);
 		
-		
-			
-		
-		
-		
-	
-		
-		
 	};
 
 }

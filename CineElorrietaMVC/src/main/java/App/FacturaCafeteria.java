@@ -177,7 +177,8 @@ public class FacturaCafeteria extends JFrame {
 					DefaultTableModel modeloTabla = (DefaultTableModel) table_1.getModel();
 					int cantidad = Integer.parseInt(textCantidad.getText());
 					Double precioTotal = 0.00;
-
+					textCantidad.setText("");
+					
 					switch (productoSeleccionado) {
 					case "- Cafe":
 						
@@ -222,7 +223,7 @@ public class FacturaCafeteria extends JFrame {
 						
 						
 					case "- Pintxo Tortilla":
-						precioTotal = 1.33 * cantidad;
+						precioTotal = 1.21 * cantidad;
 						precioTotal = Math.round(precioTotal * 100d) / 100d;
 	
 						Object opcion5[] = { "Pintxo Tortilla", precioTotal + "€", cantidad };
@@ -232,7 +233,7 @@ public class FacturaCafeteria extends JFrame {
 						
 						
 					case "- Bollo de Mantequilla":
-						precioTotal = 1.33 * cantidad;
+						precioTotal = 1.50 * cantidad;
 						precioTotal = Math.round(precioTotal * 100d) / 100d;
 	
 						Object opcion6[] = { "Bollo de Mantequilla", precioTotal + "€", cantidad };

@@ -9,6 +9,7 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableModel;
 import javax.swing.JTextField;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
@@ -19,9 +20,10 @@ import javax.swing.SwingConstants;
 import java.awt.Font;
 
 public class ResumenDomicilio extends JFrame {
-
+	
+	private static final String ResumenFactura = null;
 	private JPanel contentPane;
-	private JTable table;
+	private JTable table_1;
 	private JTextField textField;
 	private JLabel lblNewLabel;
 	private JTextField textField_1;
@@ -66,15 +68,15 @@ public class ResumenDomicilio extends JFrame {
 		scrollPane.setBounds(61, 45, 315, 238);
 		contentPane.add(scrollPane);
 		
-		table = new JTable();
-		table.setModel(new DefaultTableModel(
+		table_1 = new JTable();
+		table_1.setModel(new DefaultTableModel(
 			new Object[][] {
 			},
 			new String[] {
 				"Producto", "Precio", "Cantidad"
 			}
 		));
-		scrollPane.setViewportView(table);
+		scrollPane.setViewportView(table_1);
 		
 		textField = new JTextField();
 		textField.setColumns(10);
@@ -154,5 +156,11 @@ public class ResumenDomicilio extends JFrame {
 				
 			}
 		});
+		
 	}
+	public void ActualizarFacturaDom(TableModel tableModel) {
+		
+		table_1.setModel(tableModel);
+		
+	};
 }

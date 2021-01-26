@@ -98,7 +98,7 @@ public class Pedido extends JFrame {
 		btnDomicilio.setBounds(39, 328, 86, 23);
 		contentPane.add(btnDomicilio);
 		
-		JLabel lblNewLabel_1 = new JLabel("\u00BFQue tipo de pedido se desea realizar?");
+		JLabel lblNewLabel_1 = new JLabel("\u00BFQue tipo de pedido desea realizar?");
 		lblNewLabel_1.setBounds(29, 301, 208, 14);
 		contentPane.add(lblNewLabel_1);
 		
@@ -138,6 +138,7 @@ public class Pedido extends JFrame {
 					int cantidad = Integer.parseInt(textCantidad.getText());
 					Double precioTotal;
 
+					textCantidad.setText("");
 					switch (productoSeleccionado) {
 					case "- Cafe":
 						precioTotal = 1.13 * cantidad;
@@ -181,7 +182,7 @@ public class Pedido extends JFrame {
 						
 						
 					case "- Pintxo Tortilla":
-						precioTotal = 1.33 * cantidad;
+						precioTotal = 1.21 * cantidad;
 						precioTotal = Math.round(precioTotal * 100d) / 100d;
 	
 						Object opcion5[] = { "Pintxo Tortilla", precioTotal + "€", cantidad };
@@ -191,7 +192,7 @@ public class Pedido extends JFrame {
 						
 						
 					case "- Bollo de Mantequilla":
-						precioTotal = 1.33 * cantidad;
+						precioTotal = 1.50 * cantidad;
 						precioTotal = Math.round(precioTotal * 100d) / 100d;
 	
 						Object opcion6[] = { "Bollo de Mantequilla", precioTotal + "€", cantidad };
@@ -267,6 +268,7 @@ public class Pedido extends JFrame {
 				
 				
 				ResumenDomicilio ResumDomicilio = new ResumenDomicilio(); // Abre la ventana de LoginContraseña
+				ResumDomicilio.ActualizarFacturaDom(table_1.getModel());
 				ResumDomicilio.setVisible(true); // Hace visible la ventana de LoginContraseña
 				dispose();
 				
@@ -278,7 +280,7 @@ public class Pedido extends JFrame {
 		btnVolver.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
-				MenuOpciones Opcion = new MenuOpciones(); // Abre la ventana de Menu
+				MenuOpciones Opcion = new MenuOpciones(); // Abre la ventana de Menu				
 				Opcion.setVisible(true); // Hace visible la ventana de Menu
 				dispose(); // Destruye esta ventana
 			}
@@ -287,8 +289,9 @@ public class Pedido extends JFrame {
 		btnLocal.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
-				ResumenLocal Domicili = new ResumenLocal(); // Abre la ventana de LoginContraseña
-				Domicili.setVisible(true); // Hace visible la ventana de LoginContraseña
+				ResumenLocal Local = new ResumenLocal(); // Abre la ventana de LoginContraseña
+				Local.ActualizarFacturaLoc(table_1.getModel());
+				Local.setVisible(true); // Hace visible la ventana de LoginContraseña
 				dispose();
 				
 				
