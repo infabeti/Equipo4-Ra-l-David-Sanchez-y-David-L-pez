@@ -19,17 +19,32 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
 public class Factura extends JPanel {
-	private JTextField textCantidad;
-	private JTextField textField;
-	private JTextField textField_1;
-	private JTable table;
-	private JTextField textField_2;
+	private JTextField textCantidad;	
+	private JTextField textNIF;
+	private JTextField textEmpleado;
+	private JTable tableFactura;
+	private JTextField textTotal;
 	private ControladorFactura controladorFactura;
 	private JButton btnAnadir;
 	private JButton btnEliminar;
 	private JButton btnVolver;
 	private JButton btnAceptar;
+	private JList listProductos;
 	
+	public JTextField getTextCantidad() {
+		return textCantidad;
+	}
+
+	public void setTextCantidad(JTextField textCantidad) {
+		this.textCantidad = textCantidad;
+	}
+	public JList getListProductos() {
+		return listProductos;
+	}
+	public void setListProductos(JList listProductos) {
+		this.listProductos = listProductos;
+		
+	}
 	
 	/**
 	 * Create the panel.
@@ -70,19 +85,19 @@ public class Factura extends JPanel {
 		lblNIF.setBounds(24, 242, 46, 14);
 		add(lblNIF);
 		
-		textField = new JTextField();
-		textField.setColumns(10);
-		textField.setBounds(57, 239, 120, 20);
-		add(textField);
+		textNIF = new JTextField();
+		textNIF.setColumns(10);
+		textNIF.setBounds(57, 239, 120, 20);
+		add(textNIF);
 		
 		JLabel lblEmpleado = new JLabel("N\u00BA Empleado");
 		lblEmpleado.setBounds(24, 267, 89, 14);
 		add(lblEmpleado);
 		
-		textField_1 = new JTextField();
-		textField_1.setColumns(10);
-		textField_1.setBounds(91, 264, 86, 20);
-		add(textField_1);
+		textEmpleado = new JTextField();
+		textEmpleado.setColumns(10);
+		textEmpleado.setBounds(91, 264, 86, 20);
+		add(textEmpleado);
 		
 		JLabel lblNewLabel = new JLabel("Pulsa Aceptar si desea crear una factura");
 		lblNewLabel.setBounds(24, 343, 247, 14);
@@ -96,24 +111,24 @@ public class Factura extends JPanel {
 		pnlFactura.setBounds(243, 43, 271, 238);
 		add(pnlFactura);
 		
-		table = new JTable();
-		table.setModel(new DefaultTableModel(
+		tableFactura = new JTable();
+		tableFactura.setModel(new DefaultTableModel(
 			new Object[][] {
 			},
 			new String[] {
 					"Producto", "Precio", "Cantidad"
 			}
 		));
-		pnlFactura.setViewportView(table);
+		pnlFactura.setViewportView(tableFactura);
 		
 		JLabel lblNewLabel_3 = new JLabel("Precio Total:");
 		lblNewLabel_3.setBounds(353, 295, 86, 14);
 		add(lblNewLabel_3);
 		
-		textField_2 = new JTextField();
-		textField_2.setColumns(10);
-		textField_2.setBounds(428, 292, 86, 20);
-		add(textField_2);
+		textTotal = new JTextField();
+		textTotal.setColumns(10);
+		textTotal.setBounds(428, 292, 86, 20);
+		add(textTotal);
 		
 		JButton btnAnadir = new JButton("A\u00F1adir");
 		
@@ -133,40 +148,45 @@ public class Factura extends JPanel {
 		
 		initializeEvents();
 	}
+	
 	private void initializeEvents() {
-		this.btnAnadir.addActionListener(listenerBotonAnadirFactura(this.controladorFactura));
-		this.btnEliminar.addActionListener(listenerBotonEliminarFactura(this.controladorFactura));
+		this.btnAnadir.addActionListener(listenerBotonAnadirFactura(this.controladorFactura, textCantidad,listProductos,tableFactura));
+		this.btnEliminar.addActionListener(listenerBotonEliminarFactura(this.controladorFactura, tableFactura));
 		this.btnVolver.addActionListener(listenerBotonVolverFactura(this.controladorFactura));
 		this.btnAceptar.addActionListener(listenerBotonAceptarFacturas(this.controladorFactura));	
 	}
-	private ActionListener listenerBotonAceptarFacturas(ControladorFactura controladorFactura2) {
+	private ActionListener listenerBotonAceptarFacturas(ControladorFactura controladorFactura) {
 		return new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				controladorFactura.accionadoBotonAnadirFactura();
+				controladorFactura.accionadoBotonAceptarFactura();
 			}
 		};
 	}
-	private ActionListener listenerBotonVolverFactura(ControladorFactura controladorFactura2) {
+	private ActionListener listenerBotonVolverFactura(ControladorFactura controladorFactura) {
 		return new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				controladorFactura.accionadoBotonAnadirFactura();
+				controladorFactura.accionadoBotonVolverFactura();
 			}
 		};
 	}
-	private ActionListener listenerBotonEliminarFactura(ControladorFactura controladorFactura2) {
+	private ActionListener listenerBotonEliminarFactura(ControladorFactura controladorFactura,JTable tableFactura) {
 		return new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				controladorFactura.accionadoBotonAnadirFactura();
+				controladorFactura.accionadoBotonEliminarFactura(tableFactura);
 			}
 		};
 	}
-	private ActionListener listenerBotonAnadirFactura(ControladorFactura controladorFactura) {
+	private ActionListener listenerBotonAnadirFactura(ControladorFactura controladorFactura,JTextField textCantidad, JList listProductos, JTable tableFactura) {
 		return new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				controladorFactura.accionadoBotonAnadirFactura();
+				controladorFactura.accionadoBotonAnadirFactura(textCantidad,listProductos,tableFactura);
+				
 			}
 		};
 
 
 	}
+	
+	
+	
 }

@@ -38,7 +38,7 @@ public class ControladorMenu  {
 		
 	}
 	public void accionadoBotonFactura() {
-		// TODO Esbozo de método generado automáticamente
+		this.controladorReto.navegarFactura();
 		
 	}
 	
