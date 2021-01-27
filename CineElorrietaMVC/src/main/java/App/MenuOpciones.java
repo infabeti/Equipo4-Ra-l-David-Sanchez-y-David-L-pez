@@ -45,11 +45,11 @@ public class MenuOpciones extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 
-		JLabel lblNewLabel = new JLabel("Operaciones");
-		lblNewLabel.setBounds(5, 5, 424, 17);
-		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		contentPane.add(lblNewLabel);
+		JLabel lblTituloMenu = new JLabel("Operaciones");
+		lblTituloMenu.setBounds(5, 5, 424, 17);
+		lblTituloMenu.setHorizontalAlignment(SwingConstants.CENTER);
+		lblTituloMenu.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		contentPane.add(lblTituloMenu);
 
 		JButton btnFactura = new JButton("Ticket");
 		btnFactura.setBounds(27, 72, 112, 23);
