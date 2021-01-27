@@ -19,12 +19,12 @@ public class ControladorReto {
 	}
 	
 	public void navegarBienvenida() {
-		System.out.println("Navegar panel Bienvenida");
+		
 		this.controladorBienvenida.mostrarBienvenida();
 	}
 	
 	public void navegarMenu() {
-		System.out.println("Navegar panel Generos");
+		
 		this.controladorMenu.mostrarMenu();
 	}
 }

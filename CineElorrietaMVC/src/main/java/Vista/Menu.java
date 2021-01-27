@@ -74,6 +74,32 @@ public class Menu extends JPanel {
 		
 		private void initializeEvents() {
 			this.btnCerrarPrograma.addActionListener(listenerBotonCerrarPrograma(this.controladorMenu));
+			this.btnPedido.addActionListener(listenerBotonPedidos(this.controladorMenu));
+			this.btnFactura.addActionListener(listenerBotonFacturas(this.controladorMenu));
+			
+			
+			
+			
+		}
+		private ActionListener listenerBotonFacturas(ControladorMenu controladorMenu2) {
+			return new ActionListener() {
+				public void actionPerformed(ActionEvent arg0) {
+					controladorMenu.accionadoBotonFactura();
+				}
+			};
+	
+
+		}
+
+		private ActionListener listenerBotonPedidos(ControladorMenu controladorMenu) {
+				return new ActionListener() {
+					public void actionPerformed(ActionEvent arg0) {
+						controladorMenu.accionadoBotonPedidos();
+					}
+				};
+		
+
+				
 		}
 		private ActionListener listenerBotonCerrarPrograma(ControladorMenu controladorMenu) {
 			return new ActionListener() {

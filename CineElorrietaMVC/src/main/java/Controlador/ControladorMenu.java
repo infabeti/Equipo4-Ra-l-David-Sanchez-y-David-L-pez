@@ -31,11 +31,15 @@ public class ControladorMenu  {
 		this.menu = new Menu(this);
 		this.vista.mostrarPanel(this.menu);
 	}
-	public void accionadoBottonCerrarPrograma() {
-		this.controladorReto.navegarBienvenida();
-	}
 	public void accionadoBotonCerrarPrograma() {
 		this.controladorReto.navegarBienvenida();
+	}
+	public void accionadoBotonPedidos() {
+		// TODO Esbozo de método generado automáticamente
+		
+	}
+	public void accionadoBotonFactura() {
+		// TODO Esbozo de método generado automáticamente
 		
 	}
 	
