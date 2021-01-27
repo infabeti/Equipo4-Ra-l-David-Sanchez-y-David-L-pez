@@ -81,7 +81,7 @@ public class Menu extends JPanel {
 			
 			
 		}
-		private ActionListener listenerBotonFacturas(ControladorMenu controladorMenu2) {
+		private ActionListener listenerBotonFacturas(ControladorMenu controladorMenu) {
 			return new ActionListener() {
 				public void actionPerformed(ActionEvent arg0) {
 					controladorMenu.accionadoBotonFactura();

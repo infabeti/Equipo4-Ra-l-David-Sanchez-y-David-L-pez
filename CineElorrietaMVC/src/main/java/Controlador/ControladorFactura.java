@@ -1,25 +1,22 @@
 package Controlador;
 
-
-
-import java.awt.event.ActionListener;
-
 import Modelo.Modelo;
+import Vista.Factura;
 import Vista.Menu;
 import Vista.Vista;
 
-public class ControladorMenu  {
+public class ControladorFactura {
 
 	
 	private Modelo modelo;
 	private Vista vista;
 	private ControladorReto controladorReto;
-	private Menu menu;
+	private Factura factura;
 	
 	
 	
 	
-	public ControladorMenu(Modelo modelo, Vista vista, ControladorReto controladorReto)  {
+	public ControladorFactura(Modelo modelo, Vista vista, ControladorReto controladorReto)  {
 		
 			this.modelo = modelo;
 			this.vista = vista;
@@ -27,8 +24,8 @@ public class ControladorMenu  {
 		
 	}
 	public void mostrarMenu() {
-		this.menu = new Menu(this);
-		this.vista.mostrarPanel(this.menu);
+		this.factura = new Factura(this);
+		this.vista.mostrarPanel(this.factura);
 	}
 	public void accionadoBotonCerrarPrograma() {
 		this.controladorReto.navegarBienvenida();
@@ -37,10 +34,16 @@ public class ControladorMenu  {
 		// TODO Esbozo de método generado automáticamente
 		
 	}
-	public void accionadoBotonFactura() {
+	
+	public void mostrarFactura() {
+		// TODO Esbozo de método generado automáticamente
+		
+	}
+	public void accionadoBotonAnadirFactura() {
 		// TODO Esbozo de método generado automáticamente
 		
 	}
 	
 	
+
 }
