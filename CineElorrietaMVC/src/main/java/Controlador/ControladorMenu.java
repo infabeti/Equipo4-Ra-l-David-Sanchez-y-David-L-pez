@@ -1,18 +1,19 @@
 package Controlador;
 
-import javax.swing.JPanel;
+
 
 import Modelo.Modelo;
 import Vista.PanelGeneros;
+import Vista.PanelMenu;
 import Vista.Vista;
 
-public class ControladorMenu extends JPanel {
+public class ControladorMenu  {
 
 	
 	private Modelo modelo;
 	private Vista vista;
 	private Controlador controlador;
-	private PanelGeneros panelMenu;
+	private PanelMenu panelMenu;
 	
 	
 	
@@ -25,10 +26,14 @@ public class ControladorMenu extends JPanel {
 		
 	}
 	public void mostrarPanelMenu() {
-		this.PanelMenu = new PanelMenu(this);
-		this.vista.PanelMenu(this.PanelMenu);
+		this.panelMenu = new PanelMenu(this);
+		this.vista.mostrarPanel(this.panelMenu);
 	}
 	public void accionadoBottonCerrarPrograma() {
 		this.controlador.navegarPanelBienvenida();
+	}
+	public void accionadoBottonlistenerBotonCerrarPrograma() {
+		this.controlador.navegarBienvenida();
+		
 	}
 }

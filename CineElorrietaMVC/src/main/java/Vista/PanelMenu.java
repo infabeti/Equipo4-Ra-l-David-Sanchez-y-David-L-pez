@@ -13,6 +13,7 @@ import javax.swing.border.EmptyBorder;
 
 import App.FacturaCafeteria;
 import App.Pedido;
+import Controlador.ControladorMenu;
 import Controlador.ControladorPanelGeneros;
 
 public class PanelMenu extends JPanel {
@@ -23,7 +24,7 @@ public class PanelMenu extends JPanel {
 	private JButton btnPedido;
 	private JButton btnComandas;
 	private JLabel lblTituloMenu;
-	private ControladorPanelGeneros controladorPanelGeneros;
+	private ControladorMenu controladorMenu;
 	
 	
 	
@@ -33,7 +34,9 @@ public class PanelMenu extends JPanel {
 	
 	
 	
-	public PanelMenu() {
+	public PanelMenu(ControladorMenu controladorMenu) {
+		
+		this.controladorMenu = controladorMenu;
 		
 		setBounds(100, 100, 450, 300);
 		setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -64,6 +67,30 @@ public class PanelMenu extends JPanel {
 		JButton btnCerrarPrograma = new JButton("Desconectar");
 		btnCerrarPrograma.setBounds(281, 205, 143, 23);
 		add(btnCerrarPrograma);
+		
+		
+		initializeEvents();
+	}
+		
+		private void initializeEvents() {
+			this.btnCerrarPrograma.addActionListener(listenerBotonCerrarPrograma(this.btnCerrarPrograma));
+		}
+		private ActionListener listenerBotonCerrarPrograma(ControladorMenu controladorMenu) {
+			return new ActionListener() {
+				public void actionPerformed(ActionEvent arg0) {
+					controladorMenu.accionadoBottonlistenerBotonCerrarPrograma();
+				}
+			};
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 
 		btnFactura.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
