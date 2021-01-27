@@ -158,7 +158,7 @@ public class Factura extends JPanel {
 	private ActionListener listenerBotonAceptarFacturas(ControladorFactura controladorFactura) {
 		return new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				controladorFactura.accionadoBotonAceptarFactura();
+				controladorFactura.accionadoBotonAceptarFactura(tableFactura);
 			}
 		};
 	}

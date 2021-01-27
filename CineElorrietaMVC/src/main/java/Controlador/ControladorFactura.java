@@ -1,13 +1,17 @@
 package Controlador;
 
 import javax.swing.JList;
+import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
 
+import App.FacturaCafeteria;
+import App.MenuOpciones;
 import Modelo.Modelo;
 import Vista.Factura;
 import Vista.Menu;
+import Vista.ResumenFactura;
 import Vista.Vista;
 
 public class ControladorFactura {
@@ -16,6 +20,7 @@ public class ControladorFactura {
 	private Vista vista;
 	private ControladorReto controladorReto;
 	private Factura factura;
+	private ResumenFactura resumenfactura;
 
 	public ControladorFactura(Modelo modelo, Vista vista, ControladorReto controladorReto) {
 
@@ -43,6 +48,12 @@ public class ControladorFactura {
 		this.vista.mostrarPanel(this.factura);
 
 	}
+	public void mostrarResumenFactura() {
+		this.resumenfactura = new ResumenFactura(this);
+		this.vista.mostrarPanel(this.resumenfactura);
+		
+	}
+
 
 	public void accionadoBotonAnadirFactura(JTextField textCantidad, JList listProductos, JTable tableFactura) {
 
@@ -143,8 +154,13 @@ public class ControladorFactura {
 
 	
 
-	public void accionadoBotonAceptarFactura() {
-		// TODO Esbozo de método generado automáticamente
+	public void accionadoBotonAceptarFactura(JTable tableFactura) {
+		
+		
+		
+		/////////////////////////////////////////////////////////////////////////////////////////////////////////// Destruye esta ventana
+		
+				
 
 	}
 
@@ -153,6 +169,22 @@ public class ControladorFactura {
 
 	}
 
+	public void accionadoBotonResumFactuSi() {
+		JOptionPane.showMessageDialog(resumenfactura, "Se ha impreso y registrado la factura");
+		MenuOpciones Opcion = new MenuOpciones(); // Abre la ventana de Menu
+		Opcion.setVisible(true); // Hace visible la ventana de Menu
+		/////////////////////////////////////////////////////////////////////////////////////////////////////////// Destruye esta ventana
+		
+		
+	}
+
+	public void accionadoBotonResumFactuNo() {
+		this.controladorReto.navegarFactura();
+	///////////////////////////////////////////////////////////////////////////////////////////////////////// Destruye esta ventana
+		
+	}
+
+	
 	
 
 }

@@ -34,5 +34,9 @@ public void navegarFactura() {
 		
 		this.controladorFactura.mostrarFactura();
 	}
+public void navegarResumenFactura() {
+	
+	this.controladorFactura.mostrarResumenFactura();
 
+	}
 }

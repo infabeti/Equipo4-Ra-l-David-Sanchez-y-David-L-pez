@@ -309,18 +309,13 @@ public class FacturaCafeteria extends JFrame {
 				ResumenFactura ResumFactura = new ResumenFactura(); // Abre la ventana de LoginContraseña
 				ResumFactura.ActualizarFactura(table_1.getModel());
 				ResumFactura.setVisible(true); // Hace visible la ventana de LoginContraseña
-				;
+				
 				
 				
 				
 				dispose();
 				
-				
-				
-				
-				
-				
-				
+						
 				
 			}
 		});
