@@ -7,13 +7,13 @@ import Vista.Vista;
 public class ControladorBienvenida {
 	private Modelo modelo;
 	private Vista vista;
-	private Controlador controlador;
+	private ControladorReto controladorReto;
 	private Bienvenida Bienvenida;
 
-	public ControladorBienvenida(Modelo modelo,Vista vista,Controlador controlador) {
+	public ControladorBienvenida(Modelo modelo,Vista vista,ControladorReto controladorReto) {
 		this.modelo = modelo;
 		this.vista = vista;
-		this.controlador = controlador;		
+		this.controladorReto = controladorReto;		
 	}
 	
 	public void mostrarBienvenida() {
@@ -21,7 +21,7 @@ public class ControladorBienvenida {
 		this.vista.mostrarPanel(this.Bienvenida);
 	}
 	public void accionadoBottonMenu() {
-		this.controlador.navegarPanelGeneros();
+		this.controladorReto.navegarMenu();
 	}
 	
 	

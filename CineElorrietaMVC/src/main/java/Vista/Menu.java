@@ -16,7 +16,7 @@ import App.Pedido;
 import Controlador.ControladorMenu;
 import Controlador.ControladorPanelGeneros;
 
-public class PanelMenu extends JPanel {
+public class Menu extends JPanel {
 
 	private JButton btnCerrarPrograma;
 	private JButton btnFactura;
@@ -34,7 +34,7 @@ public class PanelMenu extends JPanel {
 	
 	
 	
-	public PanelMenu(ControladorMenu controladorMenu) {
+	public Menu(ControladorMenu controladorMenu) {
 		
 		this.controladorMenu = controladorMenu;
 		
@@ -73,50 +73,22 @@ public class PanelMenu extends JPanel {
 	}
 		
 		private void initializeEvents() {
-			this.btnCerrarPrograma.addActionListener(listenerBotonCerrarPrograma(this.btnCerrarPrograma));
+			this.btnCerrarPrograma.addActionListener(listenerBotonCerrarPrograma(this.controladorMenu));
 		}
 		private ActionListener listenerBotonCerrarPrograma(ControladorMenu controladorMenu) {
 			return new ActionListener() {
 				public void actionPerformed(ActionEvent arg0) {
-					controladorMenu.accionadoBottonlistenerBotonCerrarPrograma();
+					controladorMenu.accionadoBotonCerrarPrograma();
 				}
 			};
 		
 		
 		
+		}
 		
 		
 		
-		
-		
-		
+}		
 		
 
-		btnFactura.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-
-				FacturaCafeteria Factura = new FacturaCafeteria(); // Abre la ventana de Factura
-				Factura.setVisible(true); // Hace visible la ventana de Factura
-				// Destruye esta ventana
-
-			}
-
-		});
-		btnPedido.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				Pedido MenuPedido = new Pedido(); // Abre la ventana de Pedido
-				MenuPedido.setVisible(true); // Hace visible la ventana de Pedido
-				 // Destruye esta ventana
-
-			}
-		});
-		btnCerrarPrograma.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				 // Destruye esta ventana
-
-			}
-		});
-
-	}
-
-}
+		

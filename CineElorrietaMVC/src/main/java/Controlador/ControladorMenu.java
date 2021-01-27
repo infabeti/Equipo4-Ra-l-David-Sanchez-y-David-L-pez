@@ -2,9 +2,11 @@ package Controlador;
 
 
 
+import java.awt.event.ActionListener;
+
 import Modelo.Modelo;
+import Vista.Menu;
 import Vista.PanelGeneros;
-import Vista.PanelMenu;
 import Vista.Vista;
 
 public class ControladorMenu  {
@@ -12,28 +14,30 @@ public class ControladorMenu  {
 	
 	private Modelo modelo;
 	private Vista vista;
-	private Controlador controlador;
-	private PanelMenu panelMenu;
+	private ControladorReto controladorReto;
+	private Menu menu;
 	
 	
 	
 	
-	public ControladorMenu(Modelo modelo, Vista vista, Controlador controlador)  {
+	public ControladorMenu(Modelo modelo, Vista vista, ControladorReto controladorReto)  {
 		
 			this.modelo = modelo;
 			this.vista = vista;
-			this.controlador = controlador;	
+			this.controladorReto = controladorReto;	
 		
 	}
-	public void mostrarPanelMenu() {
-		this.panelMenu = new PanelMenu(this);
-		this.vista.mostrarPanel(this.panelMenu);
+	public void mostrarMenu() {
+		this.menu = new Menu(this);
+		this.vista.mostrarPanel(this.menu);
 	}
 	public void accionadoBottonCerrarPrograma() {
-		this.controlador.navegarPanelBienvenida();
+		this.controladorReto.navegarBienvenida();
 	}
-	public void accionadoBottonlistenerBotonCerrarPrograma() {
-		this.controlador.navegarBienvenida();
+	public void accionadoBotonCerrarPrograma() {
+		this.controladorReto.navegarBienvenida();
 		
 	}
+	
+	
 }
