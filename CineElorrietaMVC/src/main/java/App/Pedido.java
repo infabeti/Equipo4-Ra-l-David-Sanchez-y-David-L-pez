@@ -86,7 +86,7 @@ public class Pedido extends JFrame {
 		contentPane.add(btnAnadir);
 		
 		JButton btnEliminar = new JButton("Eliminar");
-		btnEliminar.setBounds(366, 342, 89, 23);
+		btnEliminar.setBounds(409, 342, 89, 23);
 		contentPane.add(btnEliminar);
 		
 		JLabel lblNewLabel = new JLabel("Pedido");
@@ -99,7 +99,7 @@ public class Pedido extends JFrame {
 		btnDomicilio.setBounds(39, 328, 86, 23);
 		contentPane.add(btnDomicilio);
 		
-		JLabel lblNewLabel_1 = new JLabel("\u00BFQue tipo de pedido desea realizar?");
+		JLabel lblNewLabel_1 = new JLabel("\u00BFQu\u00E9 tipo de pedido desea realizar?");
 		lblNewLabel_1.setBounds(29, 301, 208, 14);
 		contentPane.add(lblNewLabel_1);
 		
@@ -113,11 +113,11 @@ public class Pedido extends JFrame {
 				return values[index];
 			}
 		});
-		listProductos.setBounds(32, 112, 171, 156);
+		listProductos.setBounds(29, 144, 171, 106);
 		contentPane.add(listProductos);
 		
 		JButton btnVolver = new JButton("Volver");
-		btnVolver.setBounds(366, 381, 89, 23);
+		btnVolver.setBounds(409, 381, 89, 23);
 		contentPane.add(btnVolver);
 		
 		JButton btnLocal = new JButton("Local");	
@@ -128,6 +128,14 @@ public class Pedido extends JFrame {
 		textTotal.setBounds(412, 301, 86, 20);
 		contentPane.add(textTotal);
 		textTotal.setColumns(10);
+		
+		JLabel lblNewLabel_2 = new JLabel("Precio Total:");
+		lblNewLabel_2.setBounds(340, 301, 99, 14);
+		contentPane.add(lblNewLabel_2);
+		
+		JLabel lblNewLabel_3 = new JLabel("Listado de Productos:");
+		lblNewLabel_3.setBounds(29, 123, 171, 14);
+		contentPane.add(lblNewLabel_3);
 		
 		
 		

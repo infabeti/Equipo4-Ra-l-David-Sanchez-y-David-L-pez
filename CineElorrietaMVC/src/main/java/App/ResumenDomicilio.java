@@ -34,8 +34,6 @@ public class ResumenDomicilio extends JFrame {
 	private JTextField textField_3;
 	private JButton btnAceptar;
 	private JButton btnCancelar;
-	private JLabel lblPrecioTotal;
-	private JTextField textField_4;
 
 	/**
 	 * Launch the application.
@@ -127,15 +125,6 @@ public class ResumenDomicilio extends JFrame {
 		lblNewLabel_4.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_4.setBounds(0, 0, 461, 34);
 		contentPane.add(lblNewLabel_4);
-		
-		lblPrecioTotal = new JLabel("Precio total:");
-		lblPrecioTotal.setBounds(220, 297, 75, 14);
-		contentPane.add(lblPrecioTotal);
-		
-		textField_4 = new JTextField();
-		textField_4.setBounds(290, 294, 86, 20);
-		contentPane.add(textField_4);
-		textField_4.setColumns(10);
 		
 		
 		

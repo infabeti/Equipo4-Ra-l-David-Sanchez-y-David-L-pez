@@ -96,16 +96,12 @@ public class FacturaCafeteria extends JFrame {
 		contentPane.add(textCantidad);
 		textCantidad.setColumns(10);
 
-		JButton btnFacturaSi = new JButton("Si");		
-		btnFacturaSi.setBounds(20, 379, 89, 23);
-		contentPane.add(btnFacturaSi);
+		JButton btnAceptar = new JButton("Aceptar");		
+		btnAceptar.setBounds(20, 403, 89, 23);
+		contentPane.add(btnAceptar);
 
-		JButton btnFacturaNo = new JButton("No");
-		btnFacturaNo.setBounds(137, 379, 89, 23);
-		contentPane.add(btnFacturaNo);
-
-		JLabel lblNewLabel = new JLabel("\u00BFQuieres crear una factura?");
-		lblNewLabel.setBounds(20, 354, 197, 14);
+		JLabel lblNewLabel = new JLabel("Pulsa Aceptar si desea crear una factura");
+		lblNewLabel.setBounds(20, 378, 247, 14);
 		contentPane.add(lblNewLabel);
 
 		JScrollPane pnlFactura = new JScrollPane();
@@ -149,7 +145,7 @@ public class FacturaCafeteria extends JFrame {
 		contentPane.add(listProductos);
 		
 		JButton btnEliminar = new JButton("Eliminar");		
-		btnEliminar.setBounds(469, 350, 89, 23);
+		btnEliminar.setBounds(494, 350, 89, 23);
 		contentPane.add(btnEliminar);
 		
 		JLabel lblNewLabel_2 = new JLabel("Listado de Productos:");
@@ -157,13 +153,17 @@ public class FacturaCafeteria extends JFrame {
 		contentPane.add(lblNewLabel_2);
 		
 		JButton btnVolver = new JButton("Volver");
-		btnVolver.setBounds(469, 403, 89, 23);
+		btnVolver.setBounds(494, 403, 89, 23);
 		contentPane.add(btnVolver);
 		
 		textTotal = new JTextField();
-		textTotal.setBounds(472, 317, 86, 20);
+		textTotal.setBounds(497, 317, 86, 20);
 		contentPane.add(textTotal);
 		textTotal.setColumns(10);
+		
+		JLabel lblNewLabel_3 = new JLabel("Precio Total:");
+		lblNewLabel_3.setBounds(426, 320, 86, 14);
+		contentPane.add(lblNewLabel_3);
 
 		// Eventos
 
@@ -303,7 +303,7 @@ public class FacturaCafeteria extends JFrame {
 			}
 		});
 		
-		btnFacturaSi.addActionListener(new ActionListener() {
+		btnAceptar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
 				ResumenFactura ResumFactura = new ResumenFactura(); // Abre la ventana de LoginContraseña
@@ -350,5 +350,5 @@ public class FacturaCafeteria extends JFrame {
 		textTotal.setText(suma.toString()+"€");
 		
 		
-	};
+	}
 }
