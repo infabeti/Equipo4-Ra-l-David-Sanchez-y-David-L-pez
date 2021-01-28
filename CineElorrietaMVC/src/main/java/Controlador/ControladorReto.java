@@ -46,4 +46,15 @@ public void navegarPedido() {
 	this.controladorPedido.mostrarPedido();
 	
 	}
+
+public void navegarDomicilio() {
+	
+	this.controladorPedido.mostrarDomicilio();
+	
+	}
+
+public void navegarLocal() {
+	this.controladorPedido.mostrarLocal();
+	
+}
 }

@@ -7,6 +7,7 @@ import App.MenuOpciones;
 import Modelo.Modelo;
 import Vista.Factura;
 import Vista.Pedido;
+import Vista.ResumenDomicilio;
 import Vista.ResumenFactura;
 import Vista.ResumenLocal;
 import Vista.Vista;
@@ -19,6 +20,7 @@ public class ControladorPedido {
 	private ControladorReto controladorReto;
 	private Pedido pedido;
 	private ResumenLocal resumenlocal;
+	private ResumenDomicilio resumendomicilio;
 
 
 
@@ -39,9 +41,14 @@ public class ControladorPedido {
 		this.vista.mostrarPanel(this.pedido);
 		
 	}
-	public void mostrarResumenFactura() {
+	public void mostrarLocal() {
 		this.resumenlocal = new ResumenLocal(this);
 		this.vista.mostrarPanel(this.resumenlocal);
+		
+	}
+	public void mostrarDomicilio() {
+		this.resumendomicilio = new ResumenDomicilio(this);
+		this.vista.mostrarPanel(this.resumendomicilio);
 		
 	}
 
@@ -73,7 +80,7 @@ public class ControladorPedido {
 
 
 	public void accionadoBotonDomicilioPedido(JTable tablePedido) {
-		// TODO Esbozo de método generado automáticamente
+		this.controladorReto.navegarDomicilio();
 		
 	}
 
@@ -81,26 +88,56 @@ public class ControladorPedido {
 
 
 	public void accionadoBotonLocalPedido(JTable tablePedido) {
-		// TODO Esbozo de método generado automáticamente
+		this.controladorReto.navegarLocal();
 		
 	}
 
 
 
 
-	public void accionadoBotonAceptarPedido() {
-		JOptionPane.showMessageDialog(resumenlocal, "Se ha impreso y registrado la factura");
-		MenuOpciones Opcion = new MenuOpciones(); // Abre la ventana de Menu
-		Opcion.setVisible(true); // Hace visible la ventana de Menu
+
+
+	public void accionadoBotonAceptarLocal() {
+		JOptionPane.showMessageDialog(resumenlocal, "Se ha impreso y registrado el pedido Local");
+		this.controladorReto.navegarMenu();  // Abre la ventana de Menu
+
 		
 	}
 
 
 
 
-	public void accionadoBotonCancelarPedido() {
+	public void accionadoBotonCancelarLocal() {
 		this.controladorReto.navegarPedido();
 		
 	}
+
+
+
+
+	public void accionadoBotonAceptarDomicilio() {
+		
+		JOptionPane.showMessageDialog(resumenlocal, "Se ha impreso y registrado el Pedido a domicilio");
+		this.controladorReto.navegarMenu(); // Abre la ventana de Menu
+		// Hace visible la ventana de Menu
+	}
+
+
+
+
+	public void accionadoBotonCancelarDomicilio() {
+		this.controladorReto.navegarPedido();
+		
+	}
+
+
+
+
+	
+
+
+
+
+	
 
 }

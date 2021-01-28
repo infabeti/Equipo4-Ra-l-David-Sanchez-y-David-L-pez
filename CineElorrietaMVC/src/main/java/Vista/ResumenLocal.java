@@ -101,18 +101,18 @@ public class ResumenLocal extends JPanel {
 
 	private void IniciarEventos() {
 		this.btnCancelar.addActionListener(listenerBotonCancelarPedido()); 			
-		this.btnAceptar.addActionListener(listenerBotonAceptarPedido());
+		this.btnAceptar.addActionListener(listenerBotonAceptarLocal());
 			
 	}
 
 
 
 
-	private ActionListener listenerBotonAceptarPedido() {
+	private ActionListener listenerBotonAceptarLocal() {
 		return new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				
-				controladorPedido.accionadoBotonAceptarPedido();
+				controladorPedido.accionadoBotonAceptarLocal();
 			}
 		};
 	}
@@ -123,7 +123,7 @@ public class ResumenLocal extends JPanel {
 	private ActionListener listenerBotonCancelarPedido() {
 		return new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				controladorPedido.accionadoBotonCancelarPedido();
+				controladorPedido.accionadoBotonCancelarLocal();
 			}
 		};
 	
