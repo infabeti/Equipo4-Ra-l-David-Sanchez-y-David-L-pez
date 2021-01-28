@@ -51,7 +51,7 @@ public class ResumenLocal extends JPanel {
 			new Object[][] {
 			},
 			new String[] {
-				"New column", "New column", "New column"
+					"Producto", "Precio", "Cantidad"
 			}
 		));
 		scrollPane.setViewportView(tableResumenLocal);

@@ -78,6 +78,6 @@ public class Modelo {
 		calcularImporteTotal(textCantidad, tableFactura);
 
 	}
-	
+	}
 	
 }

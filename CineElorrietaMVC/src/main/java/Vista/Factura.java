@@ -136,6 +136,38 @@ public class Factura extends JPanel {
 		initializeEvents();
 	}
 	
+	public JTable getTableFactura() {
+		return tableFactura;
+	}
+
+	public void setTableFactura(JTable tableFactura) {
+		this.tableFactura = tableFactura;
+	}
+
+	public JTextField getTextTotal() {
+		return textTotal;
+	}
+
+	public void setTextTotal(JTextField textTotal) {
+		this.textTotal = textTotal;
+	}
+
+	public JList getListProductos() {
+		return listProductos;
+	}
+
+	public void setListProductos(JList listProductos) {
+		this.listProductos = listProductos;
+	}
+
+	public Factura(JTextField textCantidad, JTable tableFactura, JTextField textTotal, JList listProductos) {
+		super();
+		this.textCantidad = textCantidad;
+		this.tableFactura = tableFactura;
+		this.textTotal = textTotal;
+		this.listProductos = listProductos;
+	}
+
 	private void initializeEvents() {
 		this.btnAnadir.addActionListener(listenerBotonAnadirFactura(this.controladorFactura, textCantidad,listProductos,tableFactura));
 		this.btnEliminar.addActionListener(listenerBotonEliminarFactura(this.controladorFactura, tableFactura));
