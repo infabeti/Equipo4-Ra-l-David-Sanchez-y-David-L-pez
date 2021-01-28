@@ -34,7 +34,7 @@ public class ControladorMenu  {
 		this.controladorReto.navegarBienvenida();
 	}
 	public void accionadoBotonPedidos() {
-		// TODO Esbozo de método generado automáticamente
+		this.controladorReto.navegarPedido();
 		
 	}
 	public void accionadoBotonFactura() {

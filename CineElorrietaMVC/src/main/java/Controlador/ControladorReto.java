@@ -10,6 +10,7 @@ public class ControladorReto {
 	private ControladorBienvenida controladorBienvenida;
 	private ControladorMenu controladorMenu;
 	private ControladorFactura controladorFactura;
+	private ControladorPedido controladorPedido;
 	
 	
 	public ControladorReto(Modelo modelo, Vista vista) {
@@ -38,5 +39,11 @@ public void navegarResumenFactura() {
 	
 	this.controladorFactura.mostrarResumenFactura();
 
+	}
+
+public void navegarPedido() {
+	
+	this.controladorPedido.mostrarPedido();
+	
 	}
 }

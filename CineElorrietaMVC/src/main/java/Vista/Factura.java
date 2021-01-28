@@ -31,20 +31,7 @@ public class Factura extends JPanel {
 	private JButton btnAceptar;
 	private JList listProductos;
 	
-	public JTextField getTextCantidad() {
-		return textCantidad;
-	}
-
-	public void setTextCantidad(JTextField textCantidad) {
-		this.textCantidad = textCantidad;
-	}
-	public JList getListProductos() {
-		return listProductos;
-	}
-	public void setListProductos(JList listProductos) {
-		this.listProductos = listProductos;
-		
-	}
+	
 	
 	/**
 	 * Create the panel.
