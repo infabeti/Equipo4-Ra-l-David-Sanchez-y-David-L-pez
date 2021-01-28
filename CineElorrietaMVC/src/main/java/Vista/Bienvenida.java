@@ -15,7 +15,7 @@ import javax.swing.border.EmptyBorder;
 import App.Main;
 import App.MenuOpciones;
 import Controlador.ControladorBienvenida;
-import Controlador.ControladorPanelBienvenida;
+
 
 public class Bienvenida extends JPanel {
 

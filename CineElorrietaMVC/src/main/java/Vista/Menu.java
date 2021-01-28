@@ -14,7 +14,6 @@ import javax.swing.border.EmptyBorder;
 import App.FacturaCafeteria;
 import App.Pedido;
 import Controlador.ControladorMenu;
-import Controlador.ControladorPanelGeneros;
 
 public class Menu extends JPanel {
 
